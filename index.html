@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychology of Aesthetics+Design Final</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./Final Star Icon Favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" id="welcome">
+    <div class="header">
+        <div class="title">
+            <a href="https://hihyning.github.io/Psychology-of-Aesthetics---Design-Lab-Collection2024/">
+                <img src="./Final Star Icon.png"></a>
+                Psychology of Aesthetics & Design&nbsp;&nbsp;|&nbsp;&nbsp;Fall 2024</div>
+      <h1>Active Learning.</h1>
+      <h2>Impact of active / passive learning on memory</h2>
+    </div>
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <!-- First group of images -->
+            <div class="image-group">
+                <img src="./Final Decor1.png" alt="Image 1">
+                <img src="./Final Decor2.jpg" alt="Image 2">
+                <img src="./Final Decor3.jpg" alt="Image 3">
+                <img src="./Final Decor4.jpg" alt="Image 4">
+                <img src="./Final Decor5.png" alt="Image 5">
+            </div>
+            <!-- Duplicate group for seamless loop -->
+            <div class="image-group">
+                <img src="./Final Decor1.png" alt="Image 1">
+                <img src="./Final Decor2.jpg" alt="Image 2">
+                <img src="./Final Decor3.jpg" alt="Image 3">
+                <img src="./Final Decor4.jpg" alt="Image 4">
+                <img src="./Final Decor5.png" alt="Image 5">
+            </div>
+            <div class="image-group">
+                <img src="./Final Decor1.png" alt="Image 1">
+                <img src="./Final Decor2.jpg" alt="Image 2">
+                <img src="./Final Decor3.jpg" alt="Image 3">
+                <img src="./Final Decor4.jpg" alt="Image 4">
+                <img src="./Final Decor5.png" alt="Image 5">
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h3>WELCOME</h3>
+        <ul class="study-info">
+            <li><p>This study explores how different types of learning affect memory</li></p>
+            <li><p>The task will take approximately 5-10 minutes</p></li>
+            <li><p>Please be in a space (mentally & physically) where you can focus</p></li>
+            <li><p>You don’t need to prepare for the experiment – simply follow along as you go</p></li>
+        </ul>
+      <button class="button" id="start-button" onclick="startExperiment()">START</button>
+    </div>
+  </div>
+
+  <div class="container hidden" id="informed-consent">
+    <h2>Informed Consent</h2>
+    <div class="informed-text">
+    <h4>Informed Consent for Participation</h4>
+    <p>By participating in this study, you agree to take part in an experiment that compares active learning to passive observation and examines how these modes affect your memory of visual stimuli.</p>
+    
+    <h4>What You’ll Do:</h4>
+    <p>You will be randomly assigned to either the active learning or passive observation condition.</p>
+    <p>The experiment will take approximately 5-10 minutes to complete.</p>
+    
+    <h4>Confidentiality:</h4>
+    <p>Your data will be anonymised and confidential. No personally identifiable information will be collected unless stated otherwise.</p>
+    
+    <h4>Voluntary Participation:</h4>
+    <p>Participation is voluntary, and you can withdraw at any time without penalty by closing the browser or exiting the experiment.</p>
+    
+    <h4>Risks:</h4>
+    <p>There are no significant risks, though if you experience discomfort (e.g. eye strain), please stop the experiment.</p>
+    
+    <h4>Consent:</h4>
+    <p>By clicking <strong>'I Agree'</strong>, you confirm that you understand the above information and consent to participate in the study. If you have questions, please contact <a href="mailto:ganh651@newschool.edu" target="_blank">ganh651@newschool.edu</a></p>
+</div>
+    <button class="button" onclick="startInstructions()">I Agree</button>
+  </div>
+
+  <div class="container hidden" id="instructions">
+    <h2>Instructions</h2>
+    <div id="instructions-content"></div>
+    <button class="button" onclick="startActiveTask()">Begin Task</button>
+  </div>
+
+  <div class="container hidden" id="active-task">
+    <h2>Card task</h2>
+    <div id="cards-container"></div>
+    <button class="button" id="continue-button" onclick="showRecognitionTest()">Continue</button>
+  </div>
+
+  <div class="container hidden" id="recognition-test">
+    <h2>Recognition Test</h2>
+    <div id="recognition-container"></div>
+    <button class="button" onclick="submitRecognitionTest()">Submit</button>
+  </div>
+
+  <div class="container hidden" id="results">
+    <h2>Results</h2>
+    <div id="results-summary"></div>
+    <div class="save-section">
+        <p>Click below to finish the experiment:</p>
+      <button class="button" onclick="downloadResults()">Debriefing Form</button>
+    </div>
+  </div>
+
+  <div class="container hidden" id="debrief">
+    <!-- Debrief form content -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
