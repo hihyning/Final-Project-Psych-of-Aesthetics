@@ -587,32 +587,53 @@ ol li {
 }
 
 #results {
-    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#results-summary {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
 }
 
 #results-summary h3 {
     margin-top: 2rem;
-    margin-bottom: 1rem;
   }
   
   #results-summary p {
-    margin-bottom: 0.5rem;
-  }
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-left: 1em;
+    line-height: 1.1em;
+    font-size: 1.3em;
+    color: rgb(33, 33, 33)
+}
   
   .card-arrangement {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
     max-width: 30em;
-    margin: 2rem;
+    margin: 2rem auto;
     justify-content: center;
-    align-items: center;
   }
   
   .result-card {
-    width: 4em;
-    height: 6em;
+    width: 100%;
+    aspect-ratio: 3 / 4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -627,3 +648,49 @@ ol li {
   #results-summary .button {
     margin-top: 1rem;
   }
+
+  .save-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    border-top: 2px solid rgb(33,33,33);
+}
+
+.save-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.save-section.button {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+.debrief {
+    border-top: 2px solid rgb(33,33,33);
+}
+
+.debrief-info p{
+    color:rgb(33,33,33);
+    font-size: 1em;
+}
+
+.debrief-info li:before {
+    content: "★"; /* Custom bullet */
+    position: absolute;
+    font-size: 2.5em;
+    margin-top: -0.9rem;
+    margin-right: 1em;
+    color:rgb(33,33,33);
+}
+
+.debrief-info {
+    list-style: none; /* Removes default bullets */
+    padding-left: 0; /* Removes default padding */
+    margin-top: 1rem;
+    margin-left: 3em;
+}

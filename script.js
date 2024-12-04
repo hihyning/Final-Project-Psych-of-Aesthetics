@@ -357,17 +357,7 @@ function showResults() {
       <p>In the second trial, focusing on ${config.focusAttribute === 'shape' ? 'colour' : 'shape'}, you ${nonFocusedResult.correct ? 'correctly' : 'incorrectly'} identified the arrangement.</p>
       <p>Overall, you answered ${focusedResult.correct + nonFocusedResult.correct} out of 2 questions correctly.</p>
     `;
-    resultsSummary.appendChild(summary);
-  
-    // Add study debrief
-    const debrief = document.createElement('div');
-    debrief.innerHTML = `
-      <div id="debrief"><h3>Study Debrief</h3>
-      <p>This experiment was designed to test the effects of active versus passive learning on memory, specifically comparing focused and incidental memory for visual stimuli.</p>
-      <p>In the first part of the experiment, you were asked to focus on the ${config.focusAttribute} of the cards. The second recognition test then assessed your incidental memory for the ${config.focusAttribute === 'shape' ? 'colour' : 'shape'} of the cards.</p>
-      <p>Your performance on these tests helps us understand how different types of engagement with visual information affect memory formation and recall.</p></div>
-    `;
-    resultsSummary.appendChild(debrief);}
+    resultsSummary.appendChild(summary);}
   
   function goToDebriefingForm() {
     window.location.href = "https://your-debriefing-form-url.com";
