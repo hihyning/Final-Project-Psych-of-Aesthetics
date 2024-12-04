@@ -80,13 +80,13 @@
     <h4>Consent:</h4>
     <p>By clicking <strong>'I Agree'</strong>, you confirm that you understand the above information and consent to participate in the study. If you have questions, please contact <a href="mailto:ganh651@newschool.edu" target="_blank">ganh651@newschool.edu</a></p>
 </div>
-    <button class="button" onclick="startInstructions()">I Agree</button>
+    <button class="button" id="agree" onclick="startInstructions()">I Agree</button>
   </div>
 
   <div class="container hidden" id="instructions">
     <h2>Instructions</h2>
     <div id="instructions-content"></div>
-    <button class="button" onclick="startActiveTask()">Begin Task</button>
+    <button class="button" id="begintrials-button" onclick="startActiveTask()">Begin Task</button>
   </div>
 
   <div class="container hidden" id="active-task">
@@ -101,20 +101,32 @@
     <button class="button" onclick="submitRecognitionTest()">Submit</button>
   </div>
 
-  <div class="container hidden" id="results">
-    <header><h2>Results</h2></header>
-    <div id="results-summary"></div>
-    <div class="container hidden" id="debrief">
-        <h3>Study Debrief</h3>
-        <p>This experiment investigated the "Ecological Valence Theory" of color preferences, introduced by <a href="https://www.nssrperception.com/Palmer%20&%20Schloss%202010%20Ecological%20valence%20theory%20of%20color%20prefs%20PNAS.pdf">Palmer & Schloss (2010)</a>. Their research asked a fundamental question: Why do we like the colours we like? Their theory proposes a remarkably simple explanation: we like colours in proportion to how much they remind us of positive things. For example, if blue reminds you of clear skies and clean water (positive associations), you're likely to rate blue colours highly. Using this data, they calculated a "Weighted Affective Valence Estimate" (WAVE) for each color - essentially measuring how positive the associations were for each colour. Remarkably, these WAVE scores explained over 80% of the variance in colour preferences.</p>
 
-<p>The researchers tested this by having three groups of participants:</p>
-      </div>
-    <div class="save-section">
-        <p>Click below to finish the experiment:</p>
-      <button class="button" onclick="downloadResults()">Debriefing Form</button>
-  </div>
-</div>
+    <!-- Results Section -->
+    <div id="results" class="container hidden">
+        <div class="header">
+            <h2>RESULTS</h2>
+        </div>
+        <div class="section2">
+            <div class="chart-container">
+              <div id="results-summary"></div>
+              <div id="percentage-results" class="results-text"></div>
+            </div>
+            <div class="section3" id="debrief">
+                <h3>Study Debrief</h3>
+                <p>This experiment investigated the "inward bias" in visual composition preferences, modelled after <a href="https://www.thomaslanglois.net/files/Effects-of-Implied-Motion-and-Facing-Direction-on-Positional-Preferences-in-Single-Object-Pictures.pdf">Palmer and Langlois (2017)'s</a> "Effects of Implied Motion and Facing Direction on Positional Preferences in Single-Object Pictures" using divers as stimuli.</p>
+                <p>The <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010027718300404#:~:text=Thus%2C%20the%20inward%20bias%20may,move%20out%20of%20view%2C%20especially">inward bias</a> suggests that when viewing 2D compositions containing a figure with a 'front', people tend to prefer compositions where the figure is either centered or facing toward the center of the frame.</p>
+                <p>This preference may be related to our visual system's prediction about object movement - we expect objects to move in the direction they're facing, and prefer compositions where this predicted movement keeps the object within our view.</p><br>
+                <p>Your results show the percentage of times you chose compositions that followed this inward bias versus those that didn't.</p>
+                <p>Thank you for participating in this experiment!</p>
+            <div class="save-section">
+              <div class="form">
+                <p>Thank you for participating in this experiment!</p>
+              </div>
+                <button class="button" id="download" onclick="downloadResults()">DEBRIEFING FORM</button>
+            </div>
+        </div></div></div>
+    </div>
   <script src="script.js"></script>
 </body>
 </html>

@@ -328,40 +328,40 @@ function createRecognitionOption(arrangement, index, focusAttribute) {
 function arraysEqual(arr1, arr2) {
   return JSON.stringify(arr1) === JSON.stringify(arr2);
 }
+
+
 function showResults() {
-    document.getElementById('recognition-test').classList.add('hidden');
-    document.getElementById('results').classList.remove('hidden');
-  
-    const resultsSummary = document.getElementById('results-summary');
-  
-    const originalArrangement = document.createElement('div');
-    originalArrangement.innerHTML = `
-      <div class="card-arrangement">
-        ${cardData.map((card, index) => 
-          `<div class="result-card" style="background-color: ${card.color};">
-            ${createSVGShape(card.shape, 'white')}
-           </div>`
-        ).join('')}
-      </div>
-    `;
-    resultsSummary.appendChild(originalArrangement);
-  
-    // Display results summary
-    const focusedResult = config.results.find(result => result.focusAttribute === config.focusAttribute);
-    const nonFocusedResult = config.results.find(result => result.focusAttribute !== config.focusAttribute);
-  
-    const summary = document.createElement('div');
-    summary.innerHTML = `
-      <h3>Results Summary</h3>
-      <p>In the first trial, focusing on ${config.focusAttribute}, you ${focusedResult.correct ? 'correctly' : 'incorrectly'} identified the arrangement.</p>
-      <p>In the second trial, focusing on ${config.focusAttribute === 'shape' ? 'colour' : 'shape'}, you ${nonFocusedResult.correct ? 'correctly' : 'incorrectly'} identified the arrangement.</p>
-      <p>Overall, you answered ${focusedResult.correct + nonFocusedResult.correct} out of 2 questions correctly.</p>
-    `;
-    resultsSummary.appendChild(summary);}
-  
-  function goToDebriefingForm() {
-    window.location.href = "https://your-debriefing-form-url.com";
-  }
+  document.getElementById('recognition-test').classList.add('hidden');
+  document.getElementById('results').classList.remove('hidden');
+
+  const resultsSummary = document.getElementById('results-summary');
+
+  // Display the original card arrangement
+  const originalArrangement = document.createElement('div');
+  originalArrangement.innerHTML = `
+    <div class="card-arrangement">
+      ${cardData.map((card, index) => 
+        `<div class="result-card" style="background-color: ${card.color};">
+          ${createSVGShape(card.shape, 'white')}
+         </div>`
+      ).join('')}
+    </div>
+  `;
+  resultsSummary.appendChild(originalArrangement);
+
+  // Display results summary
+  const focusedResult = config.results.find(result => result.focusAttribute === config.focusAttribute);
+  const nonFocusedResult = config.results.find(result => result.focusAttribute !== config.focusAttribute);
+
+  const summary = document.createElement('div');
+  summary.innerHTML = `
+    <h3>Results Summary</h3>
+    <p>In the first trial, focusing on ${config.focusAttribute}, you ${focusedResult.correct ? 'correctly' : 'incorrectly'} identified the arrangement.</p>
+    <p>In the second trial, focusing on ${config.focusAttribute === 'shape' ? 'colour' : 'shape'}, you ${nonFocusedResult.correct ? 'correctly' : 'incorrectly'} identified the arrangement.</p>
+    <p>Overall, you answered ${focusedResult.correct + nonFocusedResult.correct} out of 2 questions correctly.</p>
+  `;
+  resultsSummary.appendChild(summary);
+}
   
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
